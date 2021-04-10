@@ -84,7 +84,7 @@
   #endif
 #else
   #ifndef Z_STOP_PIN
-    #define Z_STOP_PIN                     P1_27  // Z-STOP
+    #define Z_STOP_PIN                     P0_10  // Z-STOP
   #endif
 #endif
 
@@ -178,7 +178,7 @@
    * Hardware serial communication ports.
    * If undefined software serial is used according to the pins below
    */
-  //#define X_HARDWARE_SERIAL  Serial1
+  //#define X_HARDWARE_SERIAL  Serial
   //#define X2_HARDWARE_SERIAL Serial1
   //#define Y_HARDWARE_SERIAL  Serial1
   //#define Y2_HARDWARE_SERIAL Serial1
