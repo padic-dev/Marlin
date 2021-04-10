@@ -291,7 +291,7 @@ bool load_filament(const float &slow_load_length/*=0*/, const float &fast_load_l
 
   #endif
   TERN_(HOST_PROMPT_SUPPORT, host_action_prompt_end());
-
+  unscaled_e_move(-(PAUSE_PARK_RETRACT_LENGTH), feedRate_t(PAUSE_PARK_RETRACT_FEEDRATE));
   return true;
 }
 
