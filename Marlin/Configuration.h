@@ -25,7 +25,7 @@
  * INTERNAL_BUILD_VERSION
 ******************************************************************************/
 #define INTERNAL_BUILD_NAME "thicc lucy"
-#define INTERNAL_BUILD_VERSION "001"
+#define INTERNAL_BUILD_VERSION "003"
 #define INTERNAL_BUILD_DATE __DATE__ " " __TIME__
 #define INTERNAL_CONFIG "{\n\tBoard: BTT SKR 1.4 Turbo 5x TMC2209 | Printhead: Aero Volcano | ABL: BLTouch;BILINEAR_3x3x3,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
 #define INTERNAL_BUILD_REPORT "\nINTERNAL_BUILD_NAME:" INTERNAL_BUILD_NAME "\nINTERNAL_BUILD_VERSION:" INTERNAL_BUILD_VERSION "\nINTERNAL_BUILD_DATE:" INTERNAL_BUILD_DATE "\nINTERNAL_CONFIG: " INTERNAL_CONFIG
@@ -507,13 +507,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  49.19,  49.19 }
-    #define DEFAULT_Ki_LIST {   6.33,   6.33 }
-    #define DEFAULT_Kd_LIST {  95.60,  95.60 }
+    #define DEFAULT_Kp_LIST {  27.08,  27.08 }
+    #define DEFAULT_Ki_LIST {   3.06,   3.06 }
+    #define DEFAULT_Kd_LIST {  59.91,  59.91 }
   #else
-    #define DEFAULT_Kp 49.19
-    #define DEFAULT_Ki  6.33
-    #define DEFAULT_Kd 95.60
+    #define DEFAULT_Kp 27.08
+    #define DEFAULT_Ki  3.06
+    #define DEFAULT_Kd 59.91
   #endif
 #endif // PIDTEMP
 
@@ -552,9 +552,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 22.20
-  #define DEFAULT_bedKi 1.08
-  #define DEFAULT_bedKd 114.00
+  #define DEFAULT_bedKp 238.46
+  #define DEFAULT_bedKi  43.67
+  #define DEFAULT_bedKd 868.09
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -998,7 +998,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 26.43, 0, -3.8 }
+#define NOZZLE_TO_PROBE_OFFSET { 26.43, 0, -3.745 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1039,10 +1039,10 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   20 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES 10 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE    10 // Z Clearance between multiple probes
-//#define Z_AFTER_PROBING          10 // Z position after probing is done
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
+//#define Z_AFTER_PROBING            15 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
