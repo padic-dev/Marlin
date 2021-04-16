@@ -25,7 +25,7 @@
  * INTERNAL_BUILD_VERSION
 ******************************************************************************/
 #define INTERNAL_BUILD_NAME "thicc lucy"
-#define INTERNAL_BUILD_VERSION "003"
+#define INTERNAL_BUILD_VERSION "004"
 #define INTERNAL_BUILD_DATE __DATE__ " " __TIME__
 #define INTERNAL_CONFIG "{\n\tBoard: BTT SKR 1.4 Turbo 5x TMC2209 | Printhead: Aero Volcano | ABL: BLTouch;BILINEAR_3x3x3,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
 #define INTERNAL_BUILD_REPORT "\nINTERNAL_BUILD_NAME:" INTERNAL_BUILD_NAME "\nINTERNAL_BUILD_VERSION:" INTERNAL_BUILD_VERSION "\nINTERNAL_BUILD_DATE:" INTERNAL_BUILD_DATE "\nINTERNAL_CONFIG: " INTERNAL_CONFIG
@@ -753,7 +753,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 160, 400, 833.99 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.24, 158.89, 401.00, 833.99 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -998,7 +998,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 26.43, 0, -3.745 }
+#define NOZZLE_TO_PROBE_OFFSET { 38.000, 0.000, -3.040 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
