@@ -25,9 +25,9 @@
  * INTERNAL_BUILD_VERSION
 ******************************************************************************/
 #define INTERNAL_BUILD_NAME "pandora"
-#define INTERNAL_BUILD_VERSION "001"
+#define INTERNAL_BUILD_VERSION "003"
 #define INTERNAL_BUILD_DATE __DATE__ " " __TIME__
-#define INTERNAL_CONFIG "{\n\tBoard: Creality(4.2.7) | Printhead: TriangleLab All Metal Hotend | ABL: Pinda;BILINEAR_3x3x3,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
+#define INTERNAL_CONFIG "{\n\tBoard: Creality(4.2.7) | Printhead: Direct Drive BMG | ABL: BLTouch;BILINEAR_3x3x3,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
 #define INTERNAL_BUILD_REPORT "\nINTERNAL_BUILD_NAME:" INTERNAL_BUILD_NAME "\nINTERNAL_BUILD_VERSION:" INTERNAL_BUILD_VERSION "\nINTERNAL_BUILD_DATE:" INTERNAL_BUILD_DATE "\nINTERNAL_CONFIG: " INTERNAL_CONFIG
 /******************************************************************************
 * END: INTERNAL_BUILD_VERSION
@@ -427,7 +427,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -507,13 +507,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  27.39,  27.39 }
-    #define DEFAULT_Ki_LIST {   2.23,   2.23 }
-    #define DEFAULT_Kd_LIST {  83.97,  83.97 }
+    #define DEFAULT_Kp_LIST {  19.25,  19.25 }
+    #define DEFAULT_Ki_LIST {   1.65,   1.65 }
+    #define DEFAULT_Kd_LIST {  56.32,  56.32 }
   #else
-    #define DEFAULT_Kp 27.39
-    #define DEFAULT_Ki  2.23
-    #define DEFAULT_Kd 83.97
+    #define DEFAULT_Kp    19.25
+    #define DEFAULT_Ki     1.65
+    #define DEFAULT_Kd    56.32
   #endif
 #endif // PIDTEMP
 
@@ -550,9 +550,9 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  #define DEFAULT_bedKp 149.21
-  #define DEFAULT_bedKi  29.09
-  #define DEFAULT_bedKd 510.30
+#define DEFAULT_bedKp   102.86
+#define DEFAULT_bedKi    12.83
+#define DEFAULT_bedKd   549.67
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -751,7 +751,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 105.46 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 416.67 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -996,11 +996,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -43, -9, -4.64 }
+#define NOZZLE_TO_PROBE_OFFSET { 31.6, 0, -1.8 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (50*60)
@@ -1037,9 +1037,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     2 // Z Clearance between multiple probes
+#define Z_CLEARANCE_DEPLOY_PROBE    7 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     3 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
@@ -1136,8 +1136,8 @@
 #define Y_BED_SIZE 235
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -3
-#define Y_MIN_POS -3
+#define X_MIN_POS 0
+#define Y_MIN_POS -6
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1307,7 +1307,7 @@
     // Experimental Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-    #define ABL_BILINEAR_SUBDIVISION
+    //#define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
       #define BILINEAR_SUBDIVISIONS 3
@@ -1513,7 +1513,7 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PETG"
-#define PREHEAT_1_TEMP_HOTEND 235
+#define PREHEAT_1_TEMP_HOTEND 245
 #define PREHEAT_1_TEMP_BED     80
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
