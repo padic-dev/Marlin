@@ -1060,7 +1060,7 @@
 #define XY_PROBE_FEEDRATE (133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (HOMING_FEEDRATE_Z * 4)
+#define Z_PROBE_FEEDRATE_FAST ((4*60) * 4)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1704,29 +1704,29 @@
 #define PREHEAT_1_TEMP_CHAMBER    35
 #define PREHEAT_1_FAN_SPEED        0 // Value from 0 to 255
 
-#define PREHEAT_1_LABEL        "PLA"
-#define PREHEAT_1_TEMP_HOTEND    195
-#define PREHEAT_1_TEMP_BED        60
-#define PREHEAT_1_TEMP_CHAMBER    35
-#define PREHEAT_1_FAN_SPEED        0 // Value from 0 to 255
+#define PREHEAT_2_LABEL        "PLA"
+#define PREHEAT_2_TEMP_HOTEND    195
+#define PREHEAT_2_TEMP_BED        60
+#define PREHEAT_2_TEMP_CHAMBER    35
+#define PREHEAT_2_FAN_SPEED        0 // Value from 0 to 255
 
-#define PREHEAT_1_LABEL        "ASA"
-#define PREHEAT_1_TEMP_HOTEND    255
-#define PREHEAT_1_TEMP_BED       110
-#define PREHEAT_1_TEMP_CHAMBER    35
-#define PREHEAT_1_FAN_SPEED        0 // Value from 0 to 255
+#define PREHEAT_3_LABEL        "ASA"
+#define PREHEAT_3_TEMP_HOTEND    255
+#define PREHEAT_3_TEMP_BED       110
+#define PREHEAT_3_TEMP_CHAMBER    35
+#define PREHEAT_3_FAN_SPEED        0 // Value from 0 to 255
 
-#define PREHEAT_1_LABEL         "PC"
-#define PREHEAT_1_TEMP_HOTEND    285
-#define PREHEAT_1_TEMP_BED       120
-#define PREHEAT_1_TEMP_CHAMBER    35
-#define PREHEAT_1_FAN_SPEED        0 // Value from 0 to 255
+#define PREHEAT_4_LABEL         "PC"
+#define PREHEAT_4_TEMP_HOTEND    285
+#define PREHEAT_4_TEMP_BED       120
+#define PREHEAT_4_TEMP_CHAMBER    35
+#define PREHEAT_4_FAN_SPEED        0 // Value from 0 to 255
 
-#define PREHEAT_1_LABEL        "TPU"
-#define PREHEAT_1_TEMP_HOTEND    210
-#define PREHEAT_1_TEMP_BED        60
-#define PREHEAT_1_TEMP_CHAMBER    35
-#define PREHEAT_1_FAN_SPEED        0 // Value from 0 to 255
+#define PREHEAT_5_LABEL        "TPU"
+#define PREHEAT_5_TEMP_HOTEND    210
+#define PREHEAT_5_TEMP_BED        60
+#define PREHEAT_5_TEMP_CHAMBER    35
+#define PREHEAT_5_FAN_SPEED        0 // Value from 0 to 255
 
 /**
  * Nozzle Park
@@ -2206,7 +2206,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
