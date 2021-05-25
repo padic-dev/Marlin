@@ -25,9 +25,9 @@
  * INTERNAL_BUILD_VERSION
 ******************************************************************************/
 #define INTERNAL_BUILD_NAME "thicc lucy"
-#define INTERNAL_BUILD_VERSION "004"
+#define INTERNAL_BUILD_VERSION "1"
 #define INTERNAL_BUILD_DATE __DATE__ " " __TIME__
-#define INTERNAL_CONFIG "{\n\tBoard: BTT SKR 1.4 Turbo 5x TMC2209 | Printhead: Aero Volcano | ABL: BLTouch;BILINEAR_3x3x3,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
+#define INTERNAL_CONFIG "{\n\tBoard: BTT SKR 1.4 Turbo 5x TMC2209 | Printhead: MK3S | ABL: PINDA2;BILINEAR_7,\n\tBaud: " STRINGIFY(BAUDRATE) " \n}"
 #define INTERNAL_BUILD_REPORT "\nINTERNAL_BUILD_NAME:" INTERNAL_BUILD_NAME "\nINTERNAL_BUILD_VERSION:" INTERNAL_BUILD_VERSION "\nINTERNAL_BUILD_DATE:" INTERNAL_BUILD_DATE "\nINTERNAL_CONFIG: " INTERNAL_CONFIG
 /******************************************************************************
 * END: INTERNAL_BUILD_VERSION
@@ -150,7 +150,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME INTERNAL_BUILD_NAME
+#define CUSTOM_MACHINE_NAME INTERNAL_BUILD_NAME "(" INTERNAL_BUILD_VERSION ")"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -916,7 +916,7 @@
 #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING
+//#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1062,7 +1062,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 23, 5, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 23, 5, 1 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
